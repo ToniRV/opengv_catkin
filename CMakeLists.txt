@@ -15,12 +15,12 @@ ExternalProject_Add(
   GIT_PROGRESS 1
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND cd ../opengv_src && cmake . -DCMAKE_BUILD_TYPE=Release
-      -DEIGEN_INCLUDE_DIR=/usr/local/include/gtsam/3rdparty/Eigen
-      -DEIGEN_INCLUDE_DIRS=/usr/local/include/gtsam/3rdparty/Eigen
-      -DCMAKE_INSTALL_PREFIX=/usr/local
+      -DEIGEN_INCLUDE_DIR=${CATKIN_DEVEL_PREFIX}/include/gtsam/3rdparty/Eigen
+      -DEIGEN_INCLUDE_DIRS=${CATKIN_DEVEL_PREFIX}/include/gtsam/3rdparty/Eigen
+      -DCMAKE_INSTALL_PREFIX:PATH=${CATKIN_DEVEL_PREFIX}
   # Change the path to GTSAM's eigen to your own! ideally use gtsam_catkin...
   BUILD_COMMAND cd ../opengv_src && make -j 8
-  INSTALL_COMMAND ""
+  INSTALL_COMMAND make install
 )
 
 install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/include/opengv
