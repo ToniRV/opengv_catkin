@@ -14,11 +14,11 @@ ExternalProject_Add(
   GIT_TAG master
   GIT_PROGRESS 1
   UPDATE_COMMAND ""
-  CONFIGURE_COMMAND cd ../opengv_src && cmake . -DCMAKE_BUILD_TYPE=Release \
-      -DEIGEN3_INCLUDE_DIR=/usr/local/include/gtsam/3rdparty/Eigen \
-      -DEIGEN3_INCLUDE_DIRS=/usr/local/include/gtsam/3rdparty/Eigen \
-     # Change the path to GTSAM's eigen to your own! ideally use gtsam_catkin...
+  CONFIGURE_COMMAND cd ../opengv_src && cmake . -DCMAKE_BUILD_TYPE=Release
+      -DEIGEN_INCLUDE_DIR=/usr/local/include/gtsam/3rdparty/Eigen
+      -DEIGEN_INCLUDE_DIRS=/usr/local/include/gtsam/3rdparty/Eigen
       -DCMAKE_INSTALL_PREFIX=/usr/local
+  # Change the path to GTSAM's eigen to your own! ideally use gtsam_catkin...
   BUILD_COMMAND cd ../opengv_src && make -j 8
   INSTALL_COMMAND ""
 )
