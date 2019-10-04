@@ -18,10 +18,10 @@ ExternalProject_Add(
   CONFIGURE_COMMAND cd ../opengv_src && cmake . -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_INSTALL_PREFIX:PATH=${CATKIN_DEVEL_PREFIX}
   # Change the path to GTSAM's eigen to your own! ideally use gtsam_catkin...
-   -DEIGEN_INCLUDE_DIR=${CATKIN_DEVEL_PREFIX}/../eigen_catkin/include
-   -DEIGEN_INCLUDE_DIRS=${CATKIN_DEVEL_PREFIX}/../eigen_catkin/include
+  # -DEIGEN_INCLUDE_DIR=${CATKIN_DEVEL_PREFIX}/../src/eigen_catkin/include
+  # -DEIGEN_INCLUDE_DIRS=${CATKIN_DEVEL_PREFIX}/../src/eigen_catkin/include
   BUILD_COMMAND cd ../opengv_src && make -j 8
-  INSTALL_COMMAND make install
+  INSTALL_COMMAND ""
 )
 
 install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/include/opengv
