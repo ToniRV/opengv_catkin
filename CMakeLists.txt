@@ -21,7 +21,7 @@ ExternalProject_Add(
   # -DEIGEN_INCLUDE_DIR=${CATKIN_DEVEL_PREFIX}/../src/eigen_catkin/include
   # -DEIGEN_INCLUDE_DIRS=${CATKIN_DEVEL_PREFIX}/../src/eigen_catkin/include
   BUILD_COMMAND cd ../opengv_src && make -j 8
-  INSTALL_COMMAND ""
+  INSTALL_COMMAND cd ../opengv_src && make install
 )
 
 install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/include/opengv
