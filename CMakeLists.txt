@@ -12,7 +12,7 @@ ExternalProject_Add(
   opengv_src
   GIT_REPOSITORY https://github.com/laurentkneip/opengv.git
   GIT_TAG master
-  GIT_PROGRESS 1
+#  GIT_PROGRESS 1
   UPDATE_COMMAND ""
   #PATCH_COMMAND patch -p1 < ${CMAKE_SOURCE_DIR}/use_catkinized_eigen.patch
   CONFIGURE_COMMAND cd ../opengv_src && cmake . -DCMAKE_BUILD_TYPE=Release
@@ -31,3 +31,5 @@ install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/lib/
         DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
 cs_export(INCLUDE_DIRS ${CATKIN_DEVEL_PREFIX}/include
           LIBRARIES opengv)
+
+
